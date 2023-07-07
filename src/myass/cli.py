@@ -4,6 +4,7 @@ import click
 import confuse
 
 from myass.assistant import Assistant
+import myass.history as history
 
 
 @click.command()
@@ -13,6 +14,7 @@ def main(name):
         assistant = Assistant(name)
     except confuse.exceptions.ConfigError as e:
         raise click.ClickException(e)
+    history.initialize()
     while True:
         click.echo(assistant(click.prompt(name)))
 
