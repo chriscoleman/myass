@@ -19,6 +19,5 @@ class Assistant:
             self.messages.append({'role': 'user', 'content': content})
         params['messages'].extend(self.messages)
         r = self.api.post('chat/completions', json=params)
-        for choice in r['choices']:
-            yield choice['message']['content']
-            self.messages.append(choice['message'])
+        self.messages.append(r['choices'][0]['message'])
+        return r['choices'][0]['message']['content']
