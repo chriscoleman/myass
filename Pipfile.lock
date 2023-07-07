@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7a5e52c55b00323404ebf5a351aaa79764ac176ad7c93aabfca123bb759a8b1d"
+            "sha256": "fda6dd51bc60b11919bf344dd04b88dc0d23f33224354430ff98a9cc2b948da6"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -24,6 +24,14 @@
             "markers": "python_version >= '3.7'",
             "version": "==3.7.1"
         },
+        "appdirs": {
+            "hashes": [
+                "sha256:7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41",
+                "sha256:a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128"
+            ],
+            "index": "pypi",
+            "version": "==1.4.4"
+        },
         "certifi": {
             "hashes": [
                 "sha256:0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7",
@@ -31,6 +39,14 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==2023.5.7"
+        },
+        "click": {
+            "hashes": [
+                "sha256:2739815aaa5d2c986a88f1e9230c55e17f0caad3d958a5e13ad0797c166db9e3",
+                "sha256:b97d0c74955da062a7d4ef92fadb583806a585b2ea81958a81bd72726cbb8e37"
+            ],
+            "index": "pypi",
+            "version": "==8.1.4"
         },
         "confuse": {
             "hashes": [
