@@ -5,7 +5,7 @@ import readline
 import appdirs
 
 
-def init(appname='myass', filename='history'):
+def initialize(appname='myass', filename='history'):
     data_dir = appdirs.user_data_dir(appname)
     if not os.path.exists(data_dir):
         os.mkdir(data_dir)
