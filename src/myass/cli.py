@@ -14,7 +14,7 @@ def main(name):
     except confuse.exceptions.ConfigError as e:
         raise click.ClickException(e)
     while True:
-        assistant(click.prompt('> '))
+        click.echo(assistant(click.prompt(name)))
 
 
 if __name__ == '__main__':
