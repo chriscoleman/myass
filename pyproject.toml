@@ -9,4 +9,7 @@ readme = "README.md"
 license = {file = "LICENSE"}
 classifiers = ["License :: OSI Approved :: MIT License"]
 dynamic = ["version", "description"]
-dependencies = ["oaix"]
+dependencies = ["click", "oaix"]
+
+[project.scripts]
+myass = "myass.cli:main"

@@ -1,3 +1,5 @@
+import copy
+
 import oaix
 
 import myass.config
@@ -5,19 +7,18 @@ import myass.config
 
 class Assistant:
     def __init__(self, name):
-        self.config = myass.config.Configuration(name)
+        self.config = myass.config.Config(name)
         self.api = oaix.Api()
+        self.messages = []
 
     def __call__(self, content=None, messages=None):
-        params = self.config.flatten()
-        try:
-            params['model']
-        except KeyError:
-            params['model'] = 'gpt-3.5-turbo'
+        params = copy.deepcopy(self.config.flatten())
         if messages is not None:
-            params['messages'].extend(messages)
+            self.messages.extend(messages)
         if content is not None:
-            params['messages'].append({'role': 'user', 'content': content})
+            self.messages.append({'role': 'user', 'content': content})
+        params['messages'].extend(self.messages)
         r = self.api.post('chat/completions', json=params)
         for choice in r['choices']:
             yield choice['message']['content']
+            self.messages.append(choice['message'])
